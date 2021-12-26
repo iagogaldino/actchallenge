@@ -1,0 +1,26 @@
+<span >
+  <div>
+    <mat-progress-bar *ngIf="loadingItems" mode="indeterminate"></mat-progress-bar>
+  </div>
+
+  <div class="">
+    <mat-form-field class="example-full-width col-12 pt-3" appearance="outline">
+      <mat-label>Character</mat-label>
+      <input (keyup)="searchCharacters(text.value)" #text matInput #message maxlength="256" placeholder="Ex. Hulk" />
+    </mat-form-field>
+  </div>
+
+  <p class="col-12">
+    <ngb-alert  *ngIf="searchError" [dismissible]="false">
+      <strong>Ops!</strong> Não foi encontrado um personagem
+    </ngb-alert>
+  </p>
+
+  <mat-list dense>
+      <mat-list-item (click)="viewDetails(item)" *ngFor="let item of characters">
+          <strong>{{item.name}}</strong>
+      </mat-list-item>
+  </mat-list>
+
+
+</span>

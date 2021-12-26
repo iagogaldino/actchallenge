@@ -1,3 +1,4 @@
+import { AppService } from './services/app.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -5,6 +6,13 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
+
 export class AppComponent {
-  title = 'actChallenge';
+
+  constructor(public appService: AppService) {
+
+  }
+
+  title = 'Marvel Characters';
 }

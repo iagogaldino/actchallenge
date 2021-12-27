@@ -1,7 +1,7 @@
-<mat-toolbar color="primary" class="d-flex justify-content-between">
+<mat-toolbar *ngIf="!appService.statusLoader" color="warn" class="d-flex justify-content-between">
   <span>Marvel</span>
   <span class="example-spacer"></span>
-
 </mat-toolbar>
+<router-outlet *ngIf="!appService.statusLoader"></router-outlet>
 <app-presentation *ngIf="appService.statusLoader"></app-presentation>
-<router-outlet  *ngIf="!appService.statusLoader"></router-outlet>
+

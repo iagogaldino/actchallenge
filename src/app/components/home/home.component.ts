@@ -19,18 +19,18 @@ export class HomeComponent implements OnInit {
     this.getCharacters('');
   }
 
-  searchCharacters(charName: String){
-    this.searchError = false;
-    if (this.time) {
-      clearTimeout(this.time)
-    }
-    this.time = setTimeout(()=>{
-      console.log('consulta');
-      this.getCharacters(charName);
+  // searchCharacters(charName: String){
+  //   this.searchError = false;
+  //   if (this.time) {
+  //     clearTimeout(this.time)
+  //   }
+  //   this.time = setTimeout(()=>{
+  //     console.log('consulta');
+  //     this.getCharacters(charName);
 
-    }, 1000);
+  //   }, 1000);
 
-  }
+  // }
 
   getCharacters(charName: String){
     this.loadingItems = true;

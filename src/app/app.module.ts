@@ -16,12 +16,14 @@ import {MatCardModule} from '@angular/material/card';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { PresentationComponent } from './components/presentation/presentation.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FilterNamePipe } from './pipe/filterName.pipe';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     PresentationComponent,
-    CharDetailsComponent
+    CharDetailsComponent,
+    FilterNamePipe
   ],
   imports: [
     BrowserModule,
@@ -37,7 +39,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatProgressBarModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [FilterNamePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

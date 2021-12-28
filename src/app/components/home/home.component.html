@@ -6,7 +6,7 @@
   <div class="">
     <mat-form-field class="example-full-width col-12 pt-3" appearance="outline">
       <mat-label>Character</mat-label>
-      <input #text matInput #message maxlength="256" placeholder="Ex. Hulk" />
+      <input  (keyup)="searchCharacters(text.value)" #text matInput #message maxlength="256" placeholder="Ex. Hulk" />
     </mat-form-field>
   </div>
 
@@ -17,7 +17,7 @@
   </p>
 
   <mat-list dense>
-      <mat-list-item  (click)="viewDetails(item)" *ngFor="let item of characters | filterName: text.value">
+      <mat-list-item  (click)="viewDetails(item)" *ngFor="let item of characters">
           <span  class="alias">{{item.name}}</span>
       </mat-list-item>
   </mat-list>
